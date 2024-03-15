@@ -1,0 +1,261 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+@font-face{
+	font-family:Montserrat;
+	src:url("Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+@font-face{
+	font-family:Gabelisa;
+	src:url("gabelisa/Gabelisa Font by Keithzo (7NTypes).otf");
+}
+@font-face{
+	font-family:Fredericka;
+	src:url("Fredericka_the_Great/FrederickatheGreat-Regular.ttf");
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nav{
+  color: black;
+  font-family:Montserrat ;
+  text-decoration: none
+}
+.abt{
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 7px 7px  8px 2px  #888888;
+  background-color:white;
+  font-family:Montserrat ;
+}
+.abt h3{font-family:Gabelisa;}
+form{  
+  text-align: start;
+}
+
+form button{
+	background-color:#ffe001 !important;
+	box-shadow:  0 4px 10px 2px #000000;
+	transition: 0.3s all ease-in-out;
+	transition: 0.5s box-shadow ease-in;
+}
+form button:hover{
+	color:#ffe001;
+	background-color: black;
+	box-shadow: 0 0 12px 2px  #888888;
+	border: 1px solid ;
+}
+
+.homesec{
+  background: linear-gradient(100deg, #ffe001 65.5%, #dddba0 34.5%) !important;
+  background:transparent;
+  /* min-height: 730px; */
+  /* overflow: hidden; */
+}
+.mainview{
+	background: linear-gradient(100deg, #ffe001 65%, #dddba0 35%) !important; 
+	min-height: 590px;
+	overflow: hidden;
+}
+.hungry{
+	font-family:"Gabelisa" ;
+}
+.content{
+	margin-top: 70px !important;
+}
+.content h4{
+	font-family:"Montserrat" ;
+}
+.title{
+	font-size: 90px;
+	font-family: "Fredericka";
+}
+hr.line{
+	border-top: 2px solid #ccb201;
+	justify-content: center;
+}
+.off{
+	min-height: 10px;
+	display: flex;
+}
+.offer{
+	font-family: "Fredericka";
+	font-size: 15px !important;
+}
+.offer_no{
+	font-family: "Fredericka";
+	font-size: 55px !important;
+}
+.now{
+	font-size: 15px;
+	border: 1px solid black;
+	font-weight: bold;
+	background-color:#ffe001;
+	height: 40px;
+	width:180px;
+	font-family:"Montserrat";
+	box-shadow:  0 5px 8px 2px #000000;
+	transition: 0.3s all ease-in-out;
+	transition: 0.5s box-shadow ease-in;
+}
+.now:hover{
+	color:#ffe001;
+	background-color: black;
+	box-shadow: 0 0 12px 2px #dddba0;
+	border: 2px solid #dddba0 ;
+}
+.img1{
+  width: 21rem;
+}
+.spaghetti{
+	margin-top: -130px;
+	margin-left: -170px;
+}
+
+.choose_enjoy h1{
+	font-family: "Fredericka";
+}
+.description{
+	font-family:"Montserrat";
+}
+.imgset p{
+	width: 96%;
+	font-family:"Montserrat";
+}
+.imgset h4{
+	font-family:"Montserrat";
+	font-weight: 600 !important;
+}
+.imgset{
+	z-index: +1;
+	font-family:"Montserrat" ;
+}
+.green{
+	width:100%;
+	margin-top: 9%;
+	position:absolute;
+	z-index: 1;
+	background-color: #dddba0;
+	height: 100px;
+}
+title .sgn {
+  font-family:Gabelisa;
+}
+
+.head{
+	font-family:"Montserrat" ;
+}
+.events{
+	font-family: "Fredericka";
+}
+.description{
+	font-family:"Montserrat" ;
+}
+
+/* .cross1{margin-top: -1rem;} */
+
+
+.App {
+	background-color: white;
+  }
+  
+  .Auth-form-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+  }
+  
+  .Auth-form {
+	width: 420px;
+	box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	border-radius: 8px;
+	background-color: white;
+  }
+  
+  .Auth-form-content {
+	padding-left: 12%;
+	padding-right: 12%;
+  }
+  
+  .Auth-form-title {
+	text-align: center;
+	margin-bottom: 1em;
+	font-size: 24px;
+	color: rgb(34, 34, 34);
+	font-weight: 800;
+  }
+  
+  label {
+	font-size: 14px;
+	font-weight: 600;
+	color: rgb(34, 34, 34);
+  }
+   
+ .masthead{
+	/* background-image: 
+  url("img/bg1.jpg");
+  background-size: "cover"; */
+  /* height: 100vh;
+  margin-top: -70px;
+  font-size:50px; */
+  /* background-repeat:no-repeat;  */
+	color: white ;
+ }
+ /* D:\react_js\reactjs\src\img */
+
+ @media (max-width: 767px) {
+	.name {
+	  width: 10rem;
+	}
+  
+	.form-inputs > div {
+	  margin-bottom: 15px; /* Adjust the spacing between input fields as needed */
+	}
+  
+	.form-inputs > div:last-child {
+	  margin-bottom: 0;
+	}
+  
+	.now {
+	  /* margin-top: 15px; */
+	  width: 10rem !important;
+	  height: 46px;
+	}
+  }
+  

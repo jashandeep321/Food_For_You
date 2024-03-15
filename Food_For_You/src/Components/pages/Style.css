@@ -1,0 +1,42 @@
+.form_container{
+    width: 30%;
+    border: 2px solid;
+    font-family:Montserrat;
+}
+.form_container h1{
+    font-family:Gabelisa;
+}
+@media screen and (max-width:1000px){
+    .form_container{
+        width: 45%;
+    }
+}
+@media screen and (max-width:700px){
+    .form_container{
+        width: 75%;
+    }
+}
+.cross1{
+    margin: -2rem;
+}
+/* .cross2{
+    background-color: transparent !important;
+} */
+.form-title{
+    font-family:Gabelisa;
+    font-size: 3.5rem !important;
+    margin-bottom: 1rem;
+}
+.form-container{
+    font-family:Montserrat;
+}
+.message{
+    color: red;
+}
+
+.btn {color: black;
+font-weight: bold;
+}
+
+
+

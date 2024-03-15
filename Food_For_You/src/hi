@@ -1,0 +1,471 @@
+
+// import React, { useState } from 'react';
+// import axios from 'axios';
+// // import './Login.css';
+// import { Link} from 'react-router-dom';
+
+
+// const Login = () => {
+//   const [UEmail, setEmail] = useState('');
+//   const [Password, setPassword] = useState('');
+//   const [errorMessage, setErrorMessage] = useState('');
+
+//   const handleLogin = () => {
+//     axios.post('http://localhost:8081/api/login', { UEmail, Password })
+//       .then(response => {
+//         // Assuming the API response contains a success indicator
+//         if (response.data.success) {
+//           // Redirect to '/Box3' on successful login
+//           console.log('Login successful');
+//         } else {
+//           setErrorMessage('Incorrect email or password');
+//         }
+//       })
+//       .catch(error => {
+//         console.error('Login error:', error);
+//         setErrorMessage('Error during login');
+//       });
+//   };
+
+//   return (
+//     <>
+//     <h2 className='loginHead'>Login</h2>
+//     <div className="login-container">
+      
+//       <div className="form-group">
+//         <label>Email:</label>
+//         <input type="text" value={UEmail} onChange={(e) => setEmail(e.target.value)} />
+//       </div>
+//       <div className="form-group">
+//         <label>Password:</label>
+//         <input type="password" value={Password} onChange={(e) => setPassword(e.target.value)} />
+//       </div>
+//       <button onClick={handleLogin}>Login</button>
+//       {errorMessage && <p className="error-message">{errorMessage}</p>}
+//       <p className="loginSignup">Don't have an account? <Link to="/Signup">Register</Link></p>
+//     </div>
+//     </>
+//   );
+// };
+
+// export default ;
+
+const message = `*Table No. ${randomNumber} is booked on the name of ${formData.fname} for ${formData.people} people.`;
+//   //     document.querySelector('.demo').innerHTML = message;
+
+import React from 'react'
+// import { Link} from 'react-router-dom';
+
+import { useState } from "react";
+import axios from "axios";
+
+export default function Signup() {
+  // const currentDate = new Date().toISOString().split('T')[0];
+  const [userData, setUserData] = useState({
+    UID: '',
+    UName: '',
+    UEmail: '',
+    Password: '',
+    PAdd1:'',
+    PAdd2:'',
+    Pincode: '', 
+  Contact :'',
+  });
+
+  
+
+  function sendData() {
+    axios.post("http://localhost:8081/signup_user", userData)
+      .then(response => {
+        if (response.status === 200) {
+          let d = response.data;
+          console.log(d);
+          console.log(response.status);
+          
+          
+        }
+      })
+      .catch(error => {
+        console.error("Error sending data:", error);
+      });
+  }
+
+  return (
+    <>
+      <style>
+        {`
+        .signupHead{
+          color: #006400;
+          font-weight:bold;
+          font-size: 50px
+          
+        }
+          .signupFormContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px; /* Adjusted margin top */
+            margin-bottom: 20px; /* Adjusted margin bottom */
+          }
+
+          .signupForm {
+            background-color: #e0f2e9; /* Light green background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            max-width: 90%; /* Adjusted maximum width */
+          }
+
+          .signupLabel {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            color: #006400; /* Dark green color */
+          }
+
+          .signupInput {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #4caf50; /* Dark green border */
+            border-radius: 4px;
+          }
+
+          .signupButton {
+            background-color: #4caf50; /* Dark green color */
+            color: #fff;
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            
+          }
+          .signupLogin{
+            color:#006400;
+            
+          }
+          .signupButton:hover {
+            background-color: #45a049; /* Darker green on hover */
+          }
+
+          /* Add some additional styling for better readability */
+          .signupDiv {
+            margin-bottom: 15px;
+          }
+        `}
+      </style>
+      <h2 className="signupHead" align="center">Register</h2>
+      <div className="signupFormContainer">
+       
+        <form className="signupForm">
+        <div className="signupDiv">
+            <label className="signupLabel">Enter UID: </label><br />
+            <input className="signupInput" type="number" onChange={(e) => { setUserData({ ...userData, UID: e.target.value }) }} />
+          </div>
+          <div className="signupDiv">
+            <label className="signupLabel">Enter Name: </label><br />
+            <input className="signupInput" type="text" onChange={(e) => { setUserData({ ...userData, UName: e.target.value }) }} />
+          </div>
+          <div className="signupDiv">
+            <label className="signupLabel">Enter email: </label><br />
+            <input className="signupInput" type="email" onChange={(e) => { setUserData({ ...userData, UEmail: e.target.value }) }} />
+          </div>
+        
+          <div className="signupDiv">
+            <label className="signupLabel">Enter Password: </label><br />
+            <input className="signupInput" type="password" onChange={(e) => { setUserData({ ...userData, Password: e.target.value }) }} />
+          </div>
+          
+          <div className="signupDiv">
+            <label className="signupLabel">Enter Address: </label><br />
+            <input className="signupInput" type="text" onChange={(e) => { setUserData({ ...userData, PAdd1: e.target.value }) }} />
+          </div>
+          <div className="signupDiv">
+            <label className="signupLabel">Enter Address: </label><br />
+            <input className="signupInput" type="text" onChange={(e) => { setUserData({ ...userData, PAdd2: e.target.value }) }} />
+          </div>
+          <div className="signupDiv">
+            <label className="signupLabel">Enter City: </label><br />
+            <input className="signupInput" type="number" onChange={(e) => { setUserData({ ...userData, Pincode: e.target.value }) }} />
+          </div>
+          <div className="signupDiv">
+            <label className="signupLabel">Contact: </label><br />
+            <input className="signupInput" type="number" onChange={(e) => { setUserData({ ...userData, Contact: e.target.value }) }} />
+          </div>
+          <div className="signupDiv">
+            <input className="signupButton" type="button" onClick={sendData} value="Register" />
+          </div>
+          {/* <p className="signupLogin">Have an account? <Link to="/Login">Login</Link></p> */}
+        </form>
+      </div>
+    </>
+  );btn btn-primary
+}
+
+
+
+
+
+UID: '',
+        UName: '',
+        UEmail: '',
+        Password: '',
+        PAdd1: '',
+        PAdd2: '',
+        Pincode: '',
+        Contact: '',
+
+
+
+
+
+
+
+
+
+//   return (
+//     <div className="Auth-form-container">
+//        <Modal
+//         isOpen={Open}
+//         onRequestClose={closeModal}
+//         style={modalStyles}
+//         contentLabel="Auth Modal"
+//       >
+//           <div className='cross2 float-end m-3 '><Link to="/">  <CloseButton /></Link></div>
+//       <form className="Auth-form "onSubmit={(e) => e.preventDefault()} >
+    
+//         <div className="Auth-form-content">
+//           <h1 className="form-title text-center">Sign Up</h1>
+//           <div className="text-center">
+//             Already registered?{" "}
+//             <span className="link-primary" onClick={changeAuthMode}>
+//               Sign In
+//             </span>
+//           </div>
+//           <div className="form-group mt-3">
+//             <label>Full Name</label>
+//             <input
+//               type="text"
+//               className="form-control mt-1"
+//               placeholder="e.g Jane Doe" 
+//               value={formData.name}
+//                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+//                 required
+//             />
+//           </div>
+//           <div className="form-group mt-3">
+//             <label>Email address</label>
+//             <input
+//               type="email"
+//               className="form-control mt-1"
+//               placeholder="Email Address" 
+//               value={formData.email}
+//                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+//               required
+//             />
+//           </div>
+//           <div className="form-group mt-3">
+//               <label>Address 1</label>
+//               <input
+//                 type="text"
+//                 className="form-control mt-1"
+//                 placeholder="Enter Address 1"
+//                 value={formData.address1}
+//                 onChange={(e) => setFormData({ ...formData, address1: e.target.value })}
+//                 required
+//               />
+//             </div>
+//             <div className="form-group mt-3">
+//               <label>Address 2</label>
+//               <input
+//                 type="text"
+//                 className="form-control mt-1"
+//                 placeholder="Enter Address 2"
+//                 value={formData.address2}
+//                 onChange={(e) => setFormData({ ...formData, address2: e.target.value })}
+//               />
+//             </div>
+//             <div className="form-group mt-3">
+//               <label>Pincode</label>
+//               <input
+//                 type="text"
+//                 className="form-control mt-1"
+//                 placeholder="Enter Pincode"
+//                 value={formData.pincode}
+//                 onChange={(e) => setFormData({ ...formData, pincode: e.target.value })}
+//                 required
+//               />
+//             </div>
+//             <div className="form-group mt-3">
+//               <label>Contact</label>
+//               <input
+//                 type="text"
+//                 className="form-control mt-1"
+//                 placeholder="Enter Contact"
+//                 value={formData.contact}
+//                 onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+//                 required
+//               />
+//             </div>
+//           <div className="form-group mt-3 ">
+//             <label>Password</label>
+//             <input
+//               type="password"
+//               className="form-control mt-1 mb-2"
+//               placeholder="Password" 
+//               value={formData.password}
+//                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+//                 required
+//             />
+//           </div>
+//           <div className="d-grid gap-2 mt-4">
+//             <button type="submit" className="btn btn-primary" onClick={handleSignUp}>
+//   Submit
+// </button>
+
+//           </div>
+          
+//           <p className="text-end mt-2 mb-2">
+//           <span className="link-primary" onClick={changeAuthMode}>
+//               Sign In
+//             </span>
+//           </p>
+//         </div>
+//       </form>
+//       </Modal>
+//       {message && (
+//         <div className="message">
+//           <p>{message}</p>
+//         </div>
+//       )}
+//     </div>
+//   )
+// }
+const sendData = () => {
+  //   const requiredSeating = formData.Rcount; // Assuming Rcount represents the count of people
+  
+  //   // Filter tables that are available and have enough seating
+  //   const availableTables = tables.filter(table => (
+  //     table.status === 'Available' && table.seating >= requiredSeating
+  //   ));
+  
+  //   if (availableTables.length > 0) {
+  //     // Choose the first available table (you can implement your logic to choose a table)
+  //     const chosenTable = availableTables[0];
+  
+  //     // Update the message and set the chosen table as 'Booked'
+  //     setMessage(`Table No. ${chosenTable.number} is booked on the name of ${formData.UName} for ${formData.Rcount} people`);
+      
+  //     // Update the tables array to mark the booked table as 'Booked'
+  //     setTables(prevTables => (
+  //       prevTables.map(table => (
+  //         table.number === chosenTable.number ? { ...table, status: 'Booked' } : table
+  //       ))
+  //     ));
+  
+  //     // Send the reservation data to the server
+  //     axios.post("http://localhost:8081/reservation_user", { ...formData, TID: chosenTable.number })
+  //       .then(response => {
+  //         if (response.status !== 200) {
+  //           console.error("Reservation unsuccessful. Server error.");
+  //         }
+  //       })
+  //       .catch(error => {
+  //         console.error("Error sending data:", error);
+  //         setMessage('Error sending data. Please try again.');
+  //       });
+  //   } else {
+  //     setMessage('Reservation unsuccessful. No available tables for the given criteria.');
+  //   }
+  // };
+  
+
+
+
+
+
+
+
+
+
+
+
+  import React, { useState, useEffect } from 'react';
+import { Modal, Button, Form } from 'react-bootstrap';
+import './Style.css';
+import CloseButton from 'react-bootstrap/CloseButton';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import axios from 'axios';
+const ContactUs = () => {
+    const [userData, setUserData] = useState({
+      UName: '',
+      UEmail: '',
+      Comments: '',
+    });
+  
+    function sendData() {
+      axios.post("http://localhost:8081/contactus_user", userData)
+        .then(response => {
+          if (response.status === 200) {
+            let d = response.data;
+            console.log(d);
+            console.log(response.status);
+          }
+        })
+        .catch(error => {
+          console.error("Error sending data:", error);
+        });
+    }
+  
+
+  return (
+
+    <Modal show={show} >
+      <div className='cross2 m-3 mb-0'><Link to="/">  <CloseButton className=' float-end' /></Link></div>
+
+      <Modal.Body>
+        <Form className="form-container p-5 pt-0">
+          <h1 className="form-title text-center">Contact Us</h1>
+          <div className="form-group mt-3">
+            <label>Name</label>
+            <input
+              type="name"
+              className="form-control mt-1"
+              placeholder="e.g Jane Doe" required
+              onChange={(e) => { setUserData({ ...userData, UName: e.target.value }) }}
+            />
+          </div>
+
+          <div className="form-group mt-3">
+            <label>Email address</label>
+            <input
+              type="email"
+              className="form-control mt-1"
+              placeholder="Email Address" required
+              onChange={(e) => { setUserData({ ...userData, UEmail: e.target.value }) }}
+            />
+          </div>
+
+          <div className="form-group mt-3">
+            {/* <label>Query</label> */}
+            <Form.Control as="textarea" rows={3} placeholder="Enter your message" required 
+            onChange={(e) => { setUserData({ ...userData, Comments: e.target.value }) }}
+            />
+          </div>
+
+
+          <div className="d-grid gap-2 mt-4">
+            <button type="submit" className="btn btn-primary" onClick={sendData}>
+              Submit
+            </button>
+          </div>
+        </Form>
+      </Modal.Body>
+    </Modal>
+
+  );
+};
+
+export default ContactUs;
